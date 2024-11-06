@@ -6,11 +6,11 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 17:28:28 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/05 17:30:27 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/06 13:00:25 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 		if (c > 65 && c < 91)
 		c += 32;

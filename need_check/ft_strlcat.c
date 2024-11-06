@@ -6,16 +6,16 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:15:49 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/05 14:19:23 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/06 13:00:00 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-size_t  strlcat(char *dst, const char *src, size_t size)
+size_t	strlcat(char *dst, const char *src, size_t size)
 {
-    int	i;
+	int	i;
 
 	i = 0;
 	while (size != 0)
