@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:15:49 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/06 13:00:00 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/06 18:13:52 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 size_t	strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (size != 0)
