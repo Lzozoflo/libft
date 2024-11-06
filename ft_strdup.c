@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 17:34:14 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/05 17:45:29 by fcretin          ###   ########.fr       */
+/*   Created: 2024/11/06 08:55:57 by fcretin           #+#    #+#             */
+/*   Updated: 2024/11/06 09:52:23 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strchr(const char *str, int search_char)
-{
-	int	i;
+#include "libft.h"
+#include <stdio.h>
 
-	i = 0;
-	while (str[i])
+char	*ft_strdup(const char *src)
+{
+	char	*cpy;
+	size_t	i;
+	
+	i = ft_strlen(src);
+	cpy = (char *)malloc(sizeof(char) * i);
+	if (cpy)
 	{
-		if (str[i] == search_char)
-			return (&str[i]);
-		i++;
+		ft_strlcpy(cpy, src, i);
+		return (cpy);
 	}
+	return (NULL);
 }

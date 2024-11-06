@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 17:46:05 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/05 17:48:35 by fcretin          ###   ########.fr       */
+/*   Created: 2024/11/05 17:34:14 by fcretin           #+#    #+#             */
+/*   Updated: 2024/11/06 09:51:02 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*strrchr(const char *str, int search_char)
+char	*ft_strchr(const char *str, int search_char)
 {
 	int	i;
 
-	i = ft_strlen(str);
-	while (i > -1)
+	i = 0;
+	while (str[i])
 	{
 		if (str[i] == search_char)
-			return (&str[i]);
-		i--;
+			return ((char *) &str[i]);
+		i++;
 	}
+	return (NULL);
 }
