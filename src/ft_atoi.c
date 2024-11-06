@@ -6,11 +6,11 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:49:15 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/06 09:52:16 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/06 15:38:52 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 int	ft_atoi(const char *str)
 {

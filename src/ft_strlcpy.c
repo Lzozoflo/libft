@@ -6,11 +6,11 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:38:09 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/06 09:51:53 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/06 15:38:55 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 #include <stdlib.h>
 #include <string.h>
 
