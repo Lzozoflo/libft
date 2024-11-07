@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 17:46:05 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/06 15:38:55 by fcretin          ###   ########.fr       */
+/*   Created: 2024/11/04 16:39:34 by fcretin           #+#    #+#             */
+/*   Updated: 2024/11/07 17:43:00 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-char	*ft_strrchr(const char *str, int search_char)
+int	ft_isalnum(int c)
 {
-	int	i;
-
-	i = ft_strlen(str);
-	while (i >= 0)
-	{
-		if (str[i] == search_char)
-			return ((char *) &str[i]);
-		i--;
-	}
-	return (NULL);
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	return (0);
 }

@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 08:44:37 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/07 13:09:48 by fcretin          ###   ########.fr       */
+/*   Created: 2024/11/07 13:45:26 by fcretin           #+#    #+#             */
+/*   Updated: 2024/11/07 17:42:39 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-void	ft_bzero(void *p, size_t c)
+void	*ft_memcpy(void *dest, const void *src, size_t size)
 {
-	unsigned char	*ch;
-	int	i;
+	char *tests;
+	char *testd;
 
-	i = 0;
-	ch = p;
-	while (i != c)
+	tests = (char *)src;
+	testd = dest;
+	tests[size] = '\0';
+	while (size > 0)
 	{
-		ch[i] = 0;
-		i++;
+		size--;
+		testd[size] = tests[size];
 	}
-}
-int main(void)
-{
-	char s[] = {"oui o5i baguette"};
-	int i[] = {1, 1, 1,1,1,1,1,1}; 
-	int j = 0;
-	ft_bzero(i, 5);
-	while(j < 8)
-	{
-		printf("-%d.",i[j]);
-		j++;
-	}
+	return (&dest);
 }

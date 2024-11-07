@@ -1,6 +1,5 @@
 NAME 	=	libft.a
-FLAGS =	-Wall -Wetra -Werror
-AR		=	ar rcs
+FLAGS =	-Wall -Wextra -Werror
 RM		=	rm -fr
 
 #############################################################################################
@@ -9,21 +8,24 @@ RM		=	rm -fr
 #																							#
 #############################################################################################
 
-INC		=		inc/libft.h
+INC		=		libft.h
 
-SRC 	=		src/ft_atoi.c\
-				src/ft_isalnum.c\
-				src/ft_isalpha.c\
-				src/ft_isascii.c\
-				src/ft_isdigit.c\
-				src/ft_isprint.c\
-				src/ft_strchr.c\
-				src/ft_strdup.c\
-				src/ft_strlcpy.c\
-				src/ft_strlen.c\
-				src/ft_strrchr.c\
-				src/ft_tolower.c\
-				src/ft_toupper.c\
+SRC 	=		ft_atoi.c\
+				ft_bzero.c\
+				ft_isalnum.c\
+				ft_isalpha.c\
+				ft_isascii.c\
+				ft_isdigit.c\
+				ft_isprint.c\
+				ft_memcpy.c\
+				ft_memset.c\
+				ft_strchr.c\
+				ft_strdup.c\
+				ft_strlcpy.c\
+				ft_strlen.c\
+				ft_strrchr.c\
+				ft_tolower.c\
+				ft_toupper.c\
 
 #############################################################################################
 #																							#
@@ -31,9 +33,7 @@ SRC 	=		src/ft_atoi.c\
 #																							#
 #############################################################################################
 
-
-OBJ 	=	$(SRC:%.c=%.0)
-
+OBJ 	=	$(SRC:.c=.o)
 
 #############################################################################################
 #																							#
@@ -45,7 +45,7 @@ OBJ 	=	$(SRC:%.c=%.0)
 all		: 	$(NAME)
 
 $(NAME)	:	$(OBJ)
-			gcc -o $(NAME) $(FLAGS) $(OBJ) $(INC)
+		ar -rcs $(NAME) $(OBJ) $(INC)
 
 
 #############################################################################################
@@ -55,10 +55,10 @@ $(NAME)	:	$(OBJ)
 #############################################################################################
 
 clean 	:
-	$(RF) *.o 
+	$(RM) *.o 
 
 fclean 	: 	clean
-	$(RF) $(NAME)
+	$(RM) $(NAME)
 
 re 		:	 fclean all
 
