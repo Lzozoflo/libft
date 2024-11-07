@@ -6,12 +6,11 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 08:55:57 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/06 17:52:43 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/07 09:20:32 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-#include <stdio.h>
 
 char	*ft_strdup(const char *src)
 {

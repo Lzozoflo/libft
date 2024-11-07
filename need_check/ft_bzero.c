@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 12:38:09 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/07 09:20:28 by fcretin          ###   ########.fr       */
+/*   Created: 2024/11/07 08:44:37 by fcretin           #+#    #+#             */
+/*   Updated: 2024/11/07 09:40:08 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-size_t	ft_strlcpy(char *dst,const char *src, size_t size)
+void	ft_bzero(void *p, size_t c)
 {
+	unsigned char	*ch;
 	int	i;
-	size_t j;
 
 	i = 0;
-	j = ft_strlen(dst);
-	while (size > 0)
+	ch = p;
+	while (i != c)
 	{
-		dst[j + i] = src[i];
+		ch[i] = 0;
 		i++;
-		size--;
 	}
-	dst[j + i] = '\0';
-	return (j + i);
+}
+int main(void)
+{
+	char s[] = {"oui o5i baguette"};
+	int i[] = {1, 1, 1,1,1,1,1,1}; 
+	int j = 0;
+	ft_bzero(i, 5);
+	while(j < 8)
+	{
+		printf("-%d.",i[j]);
+		j++;
+	}
 }

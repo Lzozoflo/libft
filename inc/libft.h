@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:34:21 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/06 13:01:15 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/07 09:21:49 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int	ft_atoi(const char *str);
 int	ft_isalnum(int c);
@@ -27,8 +28,8 @@ char	*ft_strdup(const char *src);
 size_t	ft_strlcpy(char *dst,const char *src, size_t size);
 size_t	ft_strlen(const char *str);
 char	*ft_strrchr(const char *str, int search_char);
-int	ft_tolower(int c)
-int	ft_toupper(int c)
+int	ft_tolower(int c);
+int	ft_toupper(int c);
 
 
 #endif
