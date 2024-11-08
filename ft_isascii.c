@@ -6,13 +6,13 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 09:43:56 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/06 12:50:04 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/08 08:07:10 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c < 128)
-		return (0);
-	return (1);
+		return (1);
+	return (0);
 }

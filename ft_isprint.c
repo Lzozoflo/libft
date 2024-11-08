@@ -6,13 +6,13 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:11:35 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/06 09:52:22 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/08 08:16:56 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (c > 33 && c < 126)
-		return (0);
-	return (1);
+	if (c >= 32 && c < 127)
+		return (1);
+	return (0);
 }
