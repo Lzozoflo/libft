@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:38:09 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/08 11:26:04 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/08 18:48:50 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	i;
 
 	i = 0;
-	while (i < (size - 1) || src[i])
+	while (i < (size - 1) && src[i])
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	dst[size - 1] = '\0';
+	dst[size] = '\0';
 	i = 0;
 	while (src[i])
 		i++;
 	return (i);
 }
-int	main(void)
+/*int	main(void)
 {
 	char *str = "BBBB";
 	char buff1[0xF00];
@@ -40,4 +40,4 @@ int	main(void)
 	strlcpy(buff1, str, sizeof(buff1));
 	ft_strlcpy(buff2, str, sizeof(buff2));
 	printf("%s.%s", buff1, buff2);
-}
+}*/
