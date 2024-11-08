@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:49:15 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/08 08:52:06 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/08 10:54:25 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_atoi(const char *str)
 {
 	int	i;
 	int	res;
-	int sign;
+	int	sign;
 
 	i = 0;
 	res = 0;

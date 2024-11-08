@@ -1,5 +1,6 @@
 NAME 	=	libft.a
-FLAGS =	-Wall -Wextra -Werror
+CC		=	gcc
+FLAGS	=	-Wall -Wextra -Werror
 RM		=	rm -fr
 
 #############################################################################################
@@ -25,7 +26,7 @@ SRC 	=		ft_atoi.c\
 				ft_strlen.c\
 				ft_strrchr.c\
 				ft_tolower.c\
-				ft_toupper.c\
+				ft_toupper.c
 
 #############################################################################################
 #																							#
