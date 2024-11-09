@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:34:21 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/09 14:49:51 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/09 19:20:44 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,25 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+# include <unistd.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *p, size_t c);
+void	*ft_calloc(size_t ec, size_t es);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
+void	*ft_memchr(const void *p, int v, size_t n);
+int		ft_memcmp(const void *p1, const void *p2, size_t size);
 void	*ft_memcpy(void *dest, const void *src, size_t size);
 void	*ft_memmove(void *dest, const void *src, size_t size);
 void	*ft_memset(void *p, int v, size_t c);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(char *s, int fd);
 char	*ft_strchr(const char *str, int search_char);
 char	*ft_strdup(const char *src);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);

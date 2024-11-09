@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 15:46:53 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/09 19:24:16 by fcretin          ###   ########.fr       */
+/*   Created: 2024/11/09 18:06:00 by fcretin           #+#    #+#             */
+/*   Updated: 2024/11/09 18:12:59 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include "libft.h"
+
+int	ft_memcmp(const void *p1, const void *p2, size_t size)
 {
-	if (c >= 'a' && c <= 'z')
-		c -= 32;
-	return (c);
+	unsigned char	*str1;
+	unsigned char	*str2;
+	size_t			i;
+
+	str1 = (unsigned char *)p1;
+	str2 = (unsigned char *)p2;
+	i = 0;
+	while (i < size)
+	{
+		if (str1[i] != str2[i])
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+		i++;
+	}
+	return (0);
 }
