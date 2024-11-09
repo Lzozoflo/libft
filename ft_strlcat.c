@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:15:49 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/08 13:23:19 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/09 15:59:29 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,15 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
+	size_t	j;
 
-	i = 0;
-	while (size != 0)
+	j = 0;
+	i = ft_strlen(dst);
+	while (i < size && (dst[i] || src[i]))
 	{
-		dst[i] = src[i];
-		i++;
-		size--;
+		dst[i + j] = src[j];
+		j++;
 	}
-	dst[i] = '\0';
+	dst[size - 1] = '\0';
 	return (i);
 }
-
-/*int main(void)
-{
-	char	dst[7] = "oui oui";
-	char	src[8] = "baguette";
-	size_t	size = 5;
-
-	ft_strlcat(dst, src, size);
-	printf("dst est %s\n", dst);
-	printf("src est %s\n", src);
-	//strlcat();
-}*/

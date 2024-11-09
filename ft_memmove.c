@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 14:25:20 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/06 14:36:50 by fcretin          ###   ########.fr       */
+/*   Created: 2024/11/09 14:17:56 by fcretin           #+#    #+#             */
+/*   Updated: 2024/11/09 16:16:12 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-int	strncmp(const char *first, const char *second, size_t length)
+void	*ft_memmove(void *dest, const void *src, size_t size)
 {
-	int	i;
+	unsigned char	*str_dest;
+	unsigned char	*str_src;
+	size_t			i;
 
 	i = 0;
-	if (ft_strlen(frist) > ft_strlen(second))
+	str_dest = (unsigned char *)dest;
+	str_src = (unsigned char *)src;
+	if (size > 0 && (!dest && !src))
+		return (NULL);
+	if (str_dest > str_src && str_dest < str_src + size)
 	{
-			while (length > 0)
+		while (size > 0)
 		{
-
+			size--;
+			str_dest[size] = str_src[size];
 		}
-	return (-42);
+	}
+	else
+		while (i < size)
+		{
+			str_dest[i] = str_src[i];
+			i++;
+		}
+	return (dest);
 }
