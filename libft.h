@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:34:21 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/09 19:20:44 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/10 15:26:33 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
+char	*ft_itoa(int n);
 void	*ft_memchr(const void *p, int v, size_t n);
 int		ft_memcmp(const void *p1, const void *p2, size_t size);
 void	*ft_memcpy(void *dest, const void *src, size_t size);
@@ -37,11 +38,16 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 char	*ft_strchr(const char *str, int search_char);
 char	*ft_strdup(const char *src);
+void	ft_striteri(char *s, void (*f)(unsigned int,char*));
+char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 int		ft_strncmp(const char *str1, const char *str2, size_t len);
 char	*ft_strrchr(const char *str, int search_char);
+char	*ft_strtrim(char const *s1, char const *set);
+char    *ft_substr(char const *s, unsigned int i,size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 
