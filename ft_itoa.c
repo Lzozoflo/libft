@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 08:57:27 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/10 10:17:45 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/10 17:39:34 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static int	get_num_len(int n)
 	}
 	return (i);
 }
+
 char	*ft_itoa(int n)
 {
 	char	*str;

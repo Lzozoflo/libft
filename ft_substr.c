@@ -6,17 +6,17 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:34:00 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/10 13:04:43 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/10 17:37:00 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int i,size_t len)
+char	*ft_substr(char const *s, unsigned int i, size_t len)
 {
-	char *str;
-	size_t j;
-	
+	char	*str;
+	size_t	j;
+
 	j = 0;
 	if (!s || ft_strlen(s) <= i)
 	{
@@ -36,6 +36,6 @@ char *ft_substr(char const *s, unsigned int i,size_t len)
 		str[j] = (char)s[i + j];
 		j++;
 	}
-	str[j]= '\0';
+	str[j] = '\0';
 	return (str);
 }

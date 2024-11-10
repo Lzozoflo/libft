@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:23:46 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/10 15:31:16 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/10 17:39:02 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	char	*str;
+	char			*str;
 	unsigned int	i;
 
 	i = 0;
@@ -23,7 +23,7 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (s[i])
 	{
-		str[i] = f(i,s[i]);
+		str[i] = f(i, s[i]);
 		i++;
 	}
 	str[i] = '\0';

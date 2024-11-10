@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:14:02 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/10 13:47:01 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/10 17:39:16 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
-	int	i;
-	int	j;
-	int	k;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
 	j = strlen(s1);
