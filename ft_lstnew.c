@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 16:36:11 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/11 12:15:27 by fcretin          ###   ########.fr       */
+/*   Created: 2024/11/11 16:27:04 by fcretin           #+#    #+#             */
+/*   Updated: 2024/11/11 16:38:15 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *cmp, size_t len)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
-	size_t	j;
+	t_list	*chaine;
 
-	if (*cmp == '\0')
-		return ((char *)str);
-	i = 0;
-	while (str[i] && i < len)
-	{
-		j = 0;
-		while (str[i + j] && cmp[j] && str[i + j] == cmp[j] && (i + j) < len)
-			j++;
-		if (!cmp[j])
-			return ((char *)&str[i]);
-		i++;
-	}
-	return (NULL);
+	chaine->content = content;
+	chaine->next = NULL;
+	return (chaine);
 }

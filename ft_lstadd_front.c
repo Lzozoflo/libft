@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 16:36:11 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/11 12:15:27 by fcretin          ###   ########.fr       */
+/*   Created: 2024/11/11 19:21:35 by fcretin           #+#    #+#             */
+/*   Updated: 2024/11/11 19:21:52 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *cmp, size_t len)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t	i;
-	size_t	j;
-
-	if (*cmp == '\0')
-		return ((char *)str);
-	i = 0;
-	while (str[i] && i < len)
+	if (!new)
 	{
-		j = 0;
-		while (str[i + j] && cmp[j] && str[i + j] == cmp[j] && (i + j) < len)
-			j++;
-		if (!cmp[j])
-			return ((char *)&str[i]);
-		i++;
+		new->next = *lst;
+		*lst = new;
 	}
-	return (NULL);
 }
