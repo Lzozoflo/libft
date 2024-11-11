@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 10:34:00 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/11 08:48:37 by fcretin          ###   ########.fr       */
+/*   Created: 2024/11/10 16:36:11 by fcretin           #+#    #+#             */
+/*   Updated: 2024/11/11 09:44:59 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int i, size_t len)
+char	*ft_strnstr(const char *str, const char *cmp, size_t len)
 {
-	char	*str;
+	size_t	i;
 	size_t	j;
 
-	j = 0;
-	if (!s || ft_strlen(s) <= i)
+	if (*cmp == '\0')
+		return ((char *)str);
+	i = 0;
+	while (str[i] && i < len)
 	{
-		str = (char *)malloc(1);
-		if (!str)
-			return (NULL);
-		str[0] = '\0';
-		return (str);
+		j = 0;
+		while (str[i + j] && cmp[j] && str[i + j] == cmp[j] && (i + j) < len)
+			j++;
+		if (!cmp[j])
+			return ((char *)&str[i]);
+		i++;
 	}
-	if (ft_strlen(&s[i]) < len)
-		len = ft_strlen(&s[i]);
-	str = (char *)malloc(len + 1);
-	if (!str)
-		return (NULL);
-	while (j < len && s[i + j])
-	{
-		str[j] = (char)s[i + j];
-		j++;
-	}
-	str[j] = '\0';
-	return (str);
+	return (NULL);
 }
 
