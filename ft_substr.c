@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:34:00 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/11 08:48:37 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/11 11:06:44 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,3 @@ char	*ft_substr(char const *s, unsigned int i, size_t len)
 	str[j] = '\0';
 	return (str);
 }
-
