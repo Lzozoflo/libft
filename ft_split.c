@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:34:46 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/11 15:59:44 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/12 09:56:20 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ static int	ft_len_word(const char *str, char c)
 	return (i);
 }
 
-char 	**ft_free_the_malloc(char **str, int j)
+char	**ft_free_the_malloc(char **str, int j)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < j)

@@ -3,7 +3,6 @@ CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Werror
 RM		=	rm -fr
 AR		=	ar -rcs
-BONUS	=	Bonus
 
 # Commandes des couleurs
 GREEN	=	\033[0;32m
@@ -35,6 +34,12 @@ SRC 	=		ft_atoi.c\
 				ft_isdigit.c\
 				ft_isprint.c\
 				ft_itoa.c\
+				ft_lstadd_back.c\
+				ft_lstadd_front.c\
+				ft_lstdelone.c\
+				ft_lstlast.c\
+				ft_lstnew.c\
+				ft_lstsize.c\
 				ft_memchr.c\
 				ft_memcmp.c\
 				ft_memcpy.c\
@@ -98,7 +103,7 @@ $(OBJ_DIR)/%.o	: 	%.c $(INC)
 
 
 # Création de la bibliothèque
-$(NAME)			:	$(OBJ) $(INC)
+$(NAME)			:	$(OBJ) 
 			$(AR) $(NAME) $(OBJ)
 
 
@@ -108,6 +113,7 @@ $(NAME)			:	$(OBJ) $(INC)
 #																							#
 #############################################################################################
 
+BONUS	=	bonus
 
 
 #############################################################################################
@@ -115,15 +121,13 @@ $(NAME)			:	$(OBJ) $(INC)
 #############################################################################################
 
 
-$(BONUS) 	=	ft_.c\
-				ft_.c\
-				ft_.c\
-				ft_.c\
-				ft_.c\
-				ft_.c\
-				ft_.c\
-				ft_.c\
-				ft_.c
+SRC_BONUS 	=	ft_lstadd_back.c\
+				ft_lstadd_front.c\
+				ft_lstclear.c\
+				ft_lstdelone.c\
+				ft_lstlast.c\
+				ft_lstnew.c\
+				ft_lstsize.c
 
 
 #############################################################################################
@@ -132,7 +136,7 @@ $(BONUS) 	=	ft_.c\
 
 
 OBJ_DIR_BONUS	=	Object_bonus
-OBJ_BONUS 		=	$(addprefix $(OBJ_DIR_BONUS)/, $(BONUS:.c=.o))
+OBJ_BONUS 		=	$(addprefix $(OBJ_DIR_BONUS)/, $(SRC_BONUS:.c=.o))
 
 
 #############################################################################################
@@ -141,19 +145,19 @@ OBJ_BONUS 		=	$(addprefix $(OBJ_DIR_BONUS)/, $(BONUS:.c=.o))
 
 
 # Création de la bibliothèque
-$(BONUS)		:	$(OBJ_BONUS) $(INC) $(OBJ)
-			$(AR) $(NAME) $(OBJ_BONUS) $(OBJ)
+$(BONUS)		:	$(OBJ_DIR_BONUS) $(OBJ_BONUS)
+			$(AR) $(NAME) $(OBJ_BONUS)
 
 
 # Vérification et création du dossier obj
 $(OBJ_DIR_BONUS) 		:
-			mkdir -p $(OBJ_DIR)
+			mkdir -p $(OBJ_DIR_BONUS)
 			@echo "$(BLUE)Création / Vérification du Dossier ''$(OBJ_DIR)''$(RESET)"
 
 
 # Compilation des fichiers objets
 $(OBJ_DIR_BONUS)/%.o	: 	%.c $(INC)
-			$(CC) $(CFLAGS) -c $^ -o $@
+			$(CC) $(CFLAGS) -c $< -o $@
 			@echo "$(BLUE)Compilation de $< succès ! $(RESET)"
 
 

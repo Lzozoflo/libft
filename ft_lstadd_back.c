@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 08:55:57 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/12 09:26:07 by fcretin          ###   ########.fr       */
+/*   Created: 2024/11/11 19:23:21 by fcretin           #+#    #+#             */
+/*   Updated: 2024/11/12 09:55:48 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	char	*cpy;
-	size_t	i;
+	t_list	*templs;
 
-	i = ft_strlen(src);
-	cpy = (char *)malloc((i + 1));
-	if (cpy)
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else
 	{
-		cpy[i] = '\0';
-		while (i-- > 0)
-			cpy[i] = src[i];
-		return (cpy);
+		templs = ft_lstlast(*lst);
+		templs->next = new;
 	}
-	return (NULL);
 }
