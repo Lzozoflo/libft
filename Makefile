@@ -9,11 +9,7 @@ GREEN	=	\033[0;32m
 BLUE	=	\033[0;34m
 RED		=	\033[0;31m
 YELLOW	=	\033[0;33m
-
-# Commandes pour réinitialiser la couleur à la valeur par défaut du terminal.
 RESET	=	\033[0m
-
-#$@ : $<
 
 #############################################################################################
 #																							#
@@ -34,12 +30,6 @@ SRC 	=		ft_atoi.c\
 				ft_isdigit.c\
 				ft_isprint.c\
 				ft_itoa.c\
-				ft_lstadd_back.c\
-				ft_lstadd_front.c\
-				ft_lstdelone.c\
-				ft_lstlast.c\
-				ft_lstnew.c\
-				ft_lstsize.c\
 				ft_memchr.c\
 				ft_memcmp.c\
 				ft_memcpy.c\
@@ -75,9 +65,9 @@ SRC 	=		ft_atoi.c\
 
 
 OBJ_DIR	=	Object
-OBJ 	=	$(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
+OBJ 	=	$(SRC:.c=.o)
 
-
+#$(addprefix $(OBJ_DIR)/,
 #############################################################################################
 #																							#
 #										// COMPILATION										#
@@ -86,14 +76,14 @@ OBJ 	=	$(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
 
 # Règle principale
-all				: 	$(OBJ_DIR) $(NAME)
+all				: 	$(OBJ) $(NAME)
 			@echo "$(GREEN) Compilation de $(NAME) succès ! $(RESET)"
 
 
 # Vérification et création du dossier obj
 $(OBJ_DIR) 		:
 			mkdir -p $(OBJ_DIR)
-			@echo "$(BLUE)Création / Vérification du Dossier ''$(OBJ_DIR)''$(RESET)"
+			@echo "$(BLUE)Création / Vérification du Dossier ''$(OBJ_DIR_BONUS)''$(RESET)"
 
 
 # Compilation des fichiers objets
@@ -113,52 +103,36 @@ $(NAME)			:	$(OBJ)
 #																							#
 #############################################################################################
 
-BONUS	=	bonus
 
+BONUS		=	bonus
 
-#############################################################################################
-#										// SOURCE											#
-#############################################################################################
-
-
-SRC_BONUS 	=	ft_lstadd_back.c\
-				ft_lstadd_front.c\
-				ft_lstclear.c\
-				ft_lstdelone.c\
-				ft_lstlast.c\
-				ft_lstnew.c\
-				ft_lstsize.c
-
-
-#############################################################################################
-#									// OBJECT BONUS											#
-#############################################################################################
-
+SRC_BONUS 	=	ft_lstadd_back_bonus.c\
+				ft_lstadd_front_bonus.c\
+				ft_lstclear_bonus.c\
+				ft_lstdelone_bonus.c\
+				ft_lstiter_bonus.c\
+				ft_lstlast_bonus.c\
+				ft_lstnew_bonus.c\
+				ft_lstsize_bonus.c
 
 OBJ_DIR_BONUS	=	Object_bonus
-OBJ_BONUS 		=	$(addprefix $(OBJ_DIR_BONUS)/, $(SRC_BONUS:.c=.o))
+OBJ_BONUS 		=	$(SRC_BONUS:.c=.o)
 
+#$(addprefix $(OBJ_DIR_BONUS)/, 
 
-#############################################################################################
-#									// COMPILATION BONUS									#
-#############################################################################################
+bonus			:	$(OBJ_BONUS) $(NAME)
+			@$(AR) $(NAME) $(OBJ_BONUS)
+			@echo "$(GREEN)Ajout des fichiers BONUS à $(NAME) succès !$(RESET)"
 
-
-# Création de la bibliothèque
-$(BONUS)		:	$(OBJ_DIR_BONUS) $(OBJ_BONUS)
-			$(AR) $(NAME) $(OBJ_BONUS)
-
-
-# Vérification et création du dossier obj
-$(OBJ_DIR_BONUS) 		:
+$(OBJ_DIR_BONUS) :
 			mkdir -p $(OBJ_DIR_BONUS)
-			@echo "$(BLUE)Création / Vérification du Dossier ''$(OBJ_DIR)''$(RESET)"
+			@echo "$(BLUE)Création / Vérification du Dossier '$(OBJ_DIR_BONUS)'$(RESET)"
 
-
-# Compilation des fichiers objets
-$(OBJ_DIR_BONUS)/%.o	: 	%.c $(INC)
+$(OBJ_DIR_BONUS)%.o	: 	%.c $(INC)
 			$(CC) $(CFLAGS) -c $< -o $@
 			@echo "$(BLUE)Compilation de $< succès ! $(RESET)"
+
+BONUS		=	bonus
 
 
 #############################################################################################
@@ -168,12 +142,12 @@ $(OBJ_DIR_BONUS)/%.o	: 	%.c $(INC)
 #############################################################################################
 
 clean 			:
-			$(RM) $(OBJ_DIR)/*.o
+			$(RM) *.o
 			@echo "$(RED) Suppression des .o succès ! $(RESET)"
 
 
-cleandir		:
-			$(RM) $(OBJ_DIR)
+clea		:
+			$(RM) $(OBJ_DIR) $(OBJ_DIR_BONUS)
 			@echo "$(RED) Suppression du dossier ''$(OBJ_DIR)'' succès ! $(RESET)"
 
 
@@ -185,4 +159,4 @@ fclean 			: 	clean
 re 				:	 fclean all
 
 
-.PHONY: all src clean fclean re
+.PHONY: all src clean fclean re bonus
