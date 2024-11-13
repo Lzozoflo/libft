@@ -1,17 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 10:14:38 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/12 15:48:26 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/13 11:22:25 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Deletes all elements of the list and frees their memory.
+ * 
+ * The `ft_lstclear` function traverses the linked list pointed to by `lst`
+ * and deletes each element by calling the `del` function on its content, 
+ * then frees the memory associated with each element. The list is then 
+ * cleared (the `*lst` pointer is set to NULL).
+ * 
+ * @param lst A pointer to the pointer of the list head.
+ * @param del The function to delete each element's content.
+ */
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*templst;

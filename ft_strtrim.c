@@ -6,12 +6,27 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:14:02 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/11 15:52:17 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/13 11:14:23 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Removes characters from the beginning and end of a string.
+ * 
+ * The `ft_strtrim` function removes all characters present in the string
+ * `set` from the beginning and end of the string `s1`. It scans `s1` from
+ * both ends to identify and ignore the characters to be removed. A new 
+ * string is dynamically allocated to contain the portion of `s1` that does 
+ * not contain those characters. This new string is returned.
+ * 
+ * @param s1 The string to process.
+ * @param set The string containing the characters to remove from the 
+ *            beginning and end of `s1`.
+ * @return char* A new string without the characters from `set` at the 
+ *               beginning and end, or `NULL` if memory allocation fails.
+ */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char		*str;

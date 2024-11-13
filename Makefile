@@ -119,10 +119,12 @@ OBJ_DIR_BONUS	=	Object_bonus
 OBJ_BONUS 		=	$(SRC_BONUS:.c=.o)
 
 #$(addprefix $(OBJ_DIR_BONUS)/, 
+bonus 			:
+				make OBJ="$(OBJ_BONUS)"
 
-bonus			:	$(OBJ_BONUS) $(NAME)
-			@$(AR) $(NAME) $(OBJ_BONUS)
-			@echo "$(GREEN)Ajout des fichiers BONUS à $(NAME) succès !$(RESET)"
+#bonus			:	$(OBJ_BONUS) $(NAME)
+#			$(AR) $(NAME) $(OBJ_BONUS)
+#			@echo "$(GREEN)Ajout des fichiers BONUS à $(NAME) succès !$(RESET)"
 
 $(OBJ_DIR_BONUS) :
 			mkdir -p $(OBJ_DIR_BONUS)

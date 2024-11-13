@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:34:21 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/12 15:51:02 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/13 11:38:01 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_list
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *p, size_t c);
-void	*ft_calloc(size_t ec, size_t es);
+void	*ft_calloc(size_t nb, size_t es);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
@@ -51,9 +51,9 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
-char	*ft_strchr(const char *str, int search_char);
+char	*ft_strchr(const char *str, int c);
 char	*ft_strdup(const char *src);
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_striteri(char *str, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);

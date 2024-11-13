@@ -6,12 +6,25 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:49:15 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/12 17:34:51 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/13 11:46:41 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Converts a string to an integer.
+ * 
+ * The function `ft_atoi` takes a string as input and converts the numeric
+ * part of the string into an integer of type `int`. It ignores leading 
+ * whitespace, handles the signs (+/-), and stops when a non-numeric character 
+ * is encountered.
+ * 
+ * @param str The string to convert to an integer.
+ * 
+ * @return int The resulting integer from the conversion of the string.
+ *             Returns 0 if no digits are present.
+ */
 int	ft_atoi(const char *str)
 {
 	int	i;
