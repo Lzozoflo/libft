@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 08:44:37 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/13 11:53:03 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/13 17:01:32 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,9 @@
  */
 void	ft_bzero(void *p, size_t c)
 {
-	unsigned char	*ch;
 	size_t			i;
 
 	i = 0;
-	ch = p;
-	while (i != c)
-	{
-		ch[i] = 0;
-		i++;
-	}
+	while (i < c)
+		((char *)p)[i++] = 0;
 }

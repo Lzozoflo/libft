@@ -112,6 +112,7 @@ SRC_BONUS 	=	ft_lstadd_back_bonus.c\
 				ft_lstdelone_bonus.c\
 				ft_lstiter_bonus.c\
 				ft_lstlast_bonus.c\
+				ft_lstmap_bonus.c\
 				ft_lstnew_bonus.c\
 				ft_lstsize_bonus.c
 
@@ -120,7 +121,7 @@ OBJ_BONUS 		=	$(SRC_BONUS:.c=.o)
 
 #$(addprefix $(OBJ_DIR_BONUS)/, 
 bonus 			:
-				make OBJ="$(OBJ_BONUS)"
+				@make --no-print-directory OBJ="$(OBJ_BONUS)"
 
 #bonus			:	$(OBJ_BONUS) $(NAME)
 #			$(AR) $(NAME) $(OBJ_BONUS)
