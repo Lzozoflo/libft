@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 19:21:35 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/13 11:22:50 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/14 17:17:59 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
  */
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!new || !new)
+	if (!new || !lst)
 		return ;
 	new->next = *lst;
 	*lst = new;

@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:34:00 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/13 11:13:52 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/15 08:35:58 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,28 +29,27 @@
  * @return char* The extracted substring, or an empty string if index `i` 
  *                is out of bounds, or `NULL` if memory allocation fails.
  */
-char	*ft_substr(char const *str, unsigned int i, size_t len)
+char	*ft_substr(char const *str, unsigned int start, size_t len)
 {
 	char	*s;
 	size_t	j;
 
 	j = 0;
-	if (!str || ft_strlen(str) <= i)
+	if (!str)
+		return (NULL);
+	if (start > ft_strlen(str))
 	{
-		s = (char *)malloc(1);
-		if (!s)
-			return (NULL);
-		s[0] = '\0';
-		return (s);
+		len = 0;
+		start = ft_strlen(str);
 	}
-	if (ft_strlen(&str[i]) < len)
-		len = ft_strlen(&str[i]);
+	if (ft_strlen(&str[start]) < len)
+		len = ft_strlen(&str[start]);
 	s = (char *)malloc(len + 1);
 	if (!s)
 		return (NULL);
-	while (j < len && str[i + j])
+	while (j < len && str[start + j])
 	{
-		s[j] = (char)str[i + j];
+		s[j] = (char)str[start + j];
 		j++;
 	}
 	s[j] = '\0';
