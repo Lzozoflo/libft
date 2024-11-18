@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 13:54:12 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/13 11:22:01 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/18 10:54:44 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	if (!lst || !f)
+		return ;
 	while (lst)
 	{
 		f(lst->content);

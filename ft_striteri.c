@@ -6,9 +6,11 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 14:33:30 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/15 12:45:04 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/18 18:05:07 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /**
  * @brief Applies a function to each character of a string, with its index.
@@ -27,6 +29,8 @@ void	ft_striteri(char *str, void (*f)(unsigned int, char*))
 	unsigned int	i;
 
 	i = 0;
+	if (!str || !f)
+		return ;
 	while (str[i])
 	{
 		f(i, &str[i]);

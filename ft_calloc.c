@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:20:53 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/15 08:10:00 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/18 17:48:54 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ void	*ft_calloc(size_t nb, size_t es)
 {
 	void	*p;
 
-	if (es > 0 && nb > 2147483647 / es)
+	if (nb == 0 || es == 0)
+		return (malloc(0));
+	if (es != 0 && nb > 2147483647 / es)
 		return (NULL);
 	p = malloc(nb * es);
 	if (p)

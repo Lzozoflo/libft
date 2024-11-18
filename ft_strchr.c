@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 17:34:14 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/15 08:22:05 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/18 15:25:34 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strchr(const char *str, int c)
 	int	i;
 
 	i = 0;
-	while (str[i] != (char)c && str[i])
+	while (str && str[i] != (char)c && str[i])
 		i++;
 	if (str[i] == (char)c)
 		return ((char *)&str[i]);

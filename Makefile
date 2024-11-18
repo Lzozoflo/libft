@@ -87,9 +87,9 @@ $(OBJ_DIR) 		:
 
 
 # Compilation des fichiers objets
-$(OBJ_DIR)/%.o	: 	%.c $(INC)
+%.o	: 	%.c $(INC)
 			$(CC) $(CFLAGS) -c $< -o $@
-			@echo "$(BLUE)Compilation de $< succès ! $(RESET)"
+#			@echo "$(BLUE)Compilation de $< succès ! $(RESET)"
 
 
 # Création de la bibliothèque

@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:15:49 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/15 09:56:44 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/18 13:02:57 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	d = (ft_strlen(dest));
 	if (size <= d)
 		return (size + ft_strlen(src));
-	while ((d) < (size - 1) && *src)
+	while (d < (size - 1) && *src)
 		dest[d++] = *src++;
 	dest[d] = '\0';
 	return (d + ft_strlen(src));

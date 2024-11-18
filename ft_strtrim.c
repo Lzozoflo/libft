@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:14:02 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/15 12:43:15 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/18 17:52:08 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	j = ft_strlen(s1);
 	k = 0;
+	if (!s1 || !set)
+		return (NULL);
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
 	while (j > i && ft_strchr(set, s1[j - 1]))
