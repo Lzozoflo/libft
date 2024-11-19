@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 16:36:11 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/13 11:15:05 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/19 14:17:44 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strnstr(const char *str, const char *cmp, size_t len)
 	if (*cmp == '\0')
 		return ((char *)str);
 	i = 0;
-	while (str[i] && i < len)
+	while (str && str[i] && i < len)
 	{
 		j = 0;
 		while (str[i + j] && cmp[j] && str[i + j] == cmp[j] && (i + j) < len)

@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:23:46 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/18 17:52:34 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/19 14:16:42 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
+	if (!f)
+		return (NULL);
 	str = malloc(ft_strlen(s)+1);
 	if (!str || !f)
 		return (NULL);

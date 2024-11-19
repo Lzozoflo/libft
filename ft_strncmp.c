@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:25:20 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/13 11:15:26 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/19 14:17:22 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_strncmp(const char *str1, const char *str2, size_t len)
 	size_t	i;
 
 	i = 0;
-	while (i < len && (str1[i] || str2[i]))
+	while (str1 && str2 && i < len && (str1[i] || str2[i]))
 	{
 		if (str1[i] != str2[i])
 			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
