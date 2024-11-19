@@ -64,10 +64,9 @@ SRC 	=		ft_atoi.c\
 #############################################################################################
 
 
-OBJ_DIR	=	Object
 OBJ 	=	$(SRC:.c=.o)
 
-#$(addprefix $(OBJ_DIR)/,
+
 #############################################################################################
 #																							#
 #										// COMPILATION										#
@@ -77,19 +76,11 @@ OBJ 	=	$(SRC:.c=.o)
 
 # Règle principale
 all				: 	$(OBJ) $(NAME)
-			@echo "$(GREEN) Compilation de $(NAME) succès ! $(RESET)"
-
-
-# Vérification et création du dossier obj
-$(OBJ_DIR) 		:
-			mkdir -p $(OBJ_DIR)
-			@echo "$(BLUE)Création / Vérification du Dossier ''$(OBJ_DIR_BONUS)''$(RESET)"
 
 
 # Compilation des fichiers objets
 %.o	: 	%.c $(INC)
 			$(CC) $(CFLAGS) -c $< -o $@
-#			@echo "$(BLUE)Compilation de $< succès ! $(RESET)"
 
 
 # Création de la bibliothèque
@@ -116,26 +107,13 @@ SRC_BONUS 	=	ft_lstadd_back_bonus.c\
 				ft_lstnew_bonus.c\
 				ft_lstsize_bonus.c
 
-OBJ_DIR_BONUS	=	Object_bonus
+
 OBJ_BONUS 		=	$(SRC_BONUS:.c=.o)
 
-#$(addprefix $(OBJ_DIR_BONUS)/, 
+
 bonus 			:
 				@make --no-print-directory OBJ="$(OBJ_BONUS)"
 
-#bonus			:	$(OBJ_BONUS) $(NAME)
-#			$(AR) $(NAME) $(OBJ_BONUS)
-#			@echo "$(GREEN)Ajout des fichiers BONUS à $(NAME) succès !$(RESET)"
-
-$(OBJ_DIR_BONUS) :
-			mkdir -p $(OBJ_DIR_BONUS)
-			@echo "$(BLUE)Création / Vérification du Dossier '$(OBJ_DIR_BONUS)'$(RESET)"
-
-$(OBJ_DIR_BONUS)%.o	: 	%.c $(INC)
-			$(CC) $(CFLAGS) -c $< -o $@
-			@echo "$(BLUE)Compilation de $< succès ! $(RESET)"
-
-BONUS		=	bonus
 
 
 #############################################################################################
@@ -146,17 +124,10 @@ BONUS		=	bonus
 
 clean 			:
 			$(RM) *.o
-			@echo "$(RED) Suppression des .o succès ! $(RESET)"
-
-
-clea		:
-			$(RM) $(OBJ_DIR) $(OBJ_DIR_BONUS)
-			@echo "$(RED) Suppression du dossier ''$(OBJ_DIR)'' succès ! $(RESET)"
 
 
 fclean 			: 	clean
 			$(RM) $(NAME)
-			@echo "$(RED) Suppression de $(NAME) succès ! $(RESET)"
 
 
 re 				:	 fclean all
