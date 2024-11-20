@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 19:23:21 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/13 11:23:05 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/20 09:35:03 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*templs;
 
-	if (!lst || !new)
+	if (!new)
 		return ;
 	if (*lst == NULL)
 		*lst = new;

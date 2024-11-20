@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:34:00 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/18 17:51:36 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/20 11:50:12 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	j = 0;
 	if (!str)
 		return (NULL);
-	if (start > ft_strlen(str))
+	if (start >= ft_strlen(str))
 	{
 		len = 0;
 		start = ft_strlen(str);
 	}
-	if (ft_strlen(&str[start]) < len)
+	if (len > ft_strlen(&str[start]))
 		len = ft_strlen(&str[start]);
 	s = (char *)malloc(len + 1);
 	if (!s)

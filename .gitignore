@@ -1,7 +1,5 @@
 *.o
-Object/*.o
-Object_bonus/*.o
 libft.a
 a.out
-need_check
 .vscode
+need_check

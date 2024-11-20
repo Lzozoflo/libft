@@ -11,6 +11,7 @@ RED		=	\033[0;31m
 YELLOW	=	\033[0;33m
 RESET	=	\033[0m
 
+
 #############################################################################################
 #																							#
 #										// SOURCE											#
@@ -75,12 +76,16 @@ OBJ 	=	$(SRC:.c=.o)
 
 
 # Règle principale
-all				: 	$(OBJ) $(NAME)
+all				: 	$(NAME)
 
 
 # Compilation des fichiers objets
 %.o	: 	%.c $(INC)
 			$(CC) $(CFLAGS) -c $< -o $@
+
+
+clean 			:
+			$(RM) *.o
 
 
 # Création de la bibliothèque
@@ -122,9 +127,6 @@ bonus 			:
 #																							#
 #############################################################################################
 
-clean 			:
-			$(RM) *.o
-
 
 fclean 			: 	clean
 			$(RM) $(NAME)
@@ -133,4 +135,4 @@ fclean 			: 	clean
 re 				:	 fclean all
 
 
-.PHONY: all src clean fclean re bonus
+.PHONY: all clean fclean re bonus

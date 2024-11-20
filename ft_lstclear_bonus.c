@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 10:14:38 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/15 12:45:40 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/20 09:39:08 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*templst;
 
+	if (!lst || !del)
+		return ;
 	while (*lst)
 	{
 		templst = (*lst)->next;
@@ -34,4 +36,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		free(*lst);
 		*lst = templst;
 	}
+	*lst = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:03:54 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/13 17:01:23 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/20 10:09:02 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ void	*ft_memset(void *p, int v, size_t c)
 
 	i = 0;
 	while (i != c)
-		((unsigned char *)p)[i++] = v;
+		((unsigned char *)p)[i++] = (unsigned char)v;
 	return (p);
 }

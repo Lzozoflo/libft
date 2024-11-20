@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 08:57:27 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/18 17:55:49 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/19 18:08:12 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ char	*ft_itoa(int n)
 	char	*str;
 	int		i;
 
-	if (!n)
-		return (NULL);
 	i = get_num_len(n);
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
