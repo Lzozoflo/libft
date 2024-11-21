@@ -6,12 +6,11 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:20:53 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/18 17:48:54 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/20 15:17:08 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 /**
  * @brief Allocates and initializes a memory block.
  * 

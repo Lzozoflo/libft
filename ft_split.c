@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:34:46 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/13 11:13:03 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/20 15:20:11 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
  * @param c The character that separates the words in the string.
  * @return int The number of words found in the string.
  */
-
 static int	ft_num_word(const char *s, char c)
 {
 	int	i;
@@ -80,7 +79,6 @@ static int	ft_len_word(const char *str, char c)
  * @param j The number of strings to free before returning `NULL`.
  * @return char** Always `NULL` after freeing the memory.
  */
-
 static char	**ft_free_the_malloc(char **str, int j)
 {
 	int	i;

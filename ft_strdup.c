@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 08:55:57 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/20 10:23:10 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/20 12:58:56 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,9 @@ char	*ft_strdup(const char *src)
 	char	*cpy;
 	size_t	i;
 
-	if (!src)
-		return (NULL);
 	i = ft_strlen(src);
 	cpy = (char *)malloc((i + 1));
-	if (cpy)
+	if (!cpy)
 		return (NULL);
 	cpy[i] = '\0';
 	while (i-- > 0)

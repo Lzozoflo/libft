@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:38:09 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/20 10:31:28 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/20 13:01:25 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,9 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	s;
 
-	while (src[s] != '\0')
-		s++;
 	if (size == 0)
-		return (s);
+		return (ft_strlen(src));
 	i = 0;
 	while ((i < (size - 1)) && src[i])
 	{
@@ -45,5 +42,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		i++;
 	}
 	dst[i] = '\0';
-	return (s);
+	while (src[i])
+		i++;
+	return (i);
 }
