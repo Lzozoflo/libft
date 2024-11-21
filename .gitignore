@@ -1,5 +1,5 @@
-*.o
-libft.a
 a.out
+*.o
+*.txt
 .vscode
-need_check
+libft.a
