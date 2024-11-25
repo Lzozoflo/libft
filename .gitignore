@@ -1,5 +1,5 @@
 a.out
-*.o
+object
 *.txt
 .vscode
 libft.a

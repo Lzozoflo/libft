@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:17:56 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/20 13:03:44 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/25 15:30:29 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 	unsigned char	*s;
 	size_t			i;
 
-	if (!dest && !src)
+	if (!dest || !src)
 		return (NULL);
 	i = 0;
 	d = (unsigned char *)dest;

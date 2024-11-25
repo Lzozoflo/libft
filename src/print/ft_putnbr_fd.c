@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 19:07:51 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/13 11:18:51 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/25 19:10:37 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,40 @@
  * @param n The integer to write.
  * @param fd The file descriptor or output stream to write the integer to.
  */
-void	ft_putnbr_fd(int n, int fd)
+ssize_t	ft_putnbr_fd(int n, int fd)
 {
+	int	count;
+
+	count = 0;
 	if (n == -2147483648)
-	{
-		write(fd, "-2147483648", 11);
-		return ;
-	}
+		return (write(fd, "-2147483648", 11));
 	if (n < 0)
 	{
-		ft_putchar_fd('-', fd);
+		count = ft_putchar_fd('-', fd);
 		n = -n;
 	}
 	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
+		count += ft_putnbr_fd(n / 10, fd);
 	n = (n % 10);
-	ft_putchar_fd(n + '0', fd);
+	count += ft_putchar_fd(n + '0', fd);
+	return (count);
+}
+
+ssize_t	ft_putnbr(int n)
+{
+	int	count;
+
+	count = 0;
+	if (n == -2147483648)
+		return (write(1, "-2147483648", 11));
+	if (n < 0)
+	{
+		count = ft_putchar('-');
+		n = -n;
+	}
+	if (n > 9)
+		count += ft_putnbr(n / 10);
+	n = (n % 10);
+	count += ft_putchar(n + '0');
+	return (count);
 }

@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:18:30 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/13 11:17:03 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/25 19:15:22 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,28 @@
  * @return char* A new string containing the concatenation of `s1` and 
  *               `s2`, or `NULL` if memory allocation fails.
  */
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char const *s2)
 {
 	char	*str;
+	char	*tmp;
 	int		i;
-	int		j;
 
-	if ((!s1 || !s2))
-		return (NULL);
-	i = ft_strlen(s1);
-	j = ft_strlen(s2);
-	str = (char *)malloc(sizeof(char) * (i + j + 1));
+	i = 0;
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!str)
+	{
+		if (s1)
+			free(s1);
 		return (NULL);
-	ft_strlcpy(str, s1, i + 1);
-	ft_strlcat(str, s2, i + j + 1);
+	}
+	tmp = str;
+	while (s1[i])
+		*tmp++ = s1[i];
+	i = 0;
+	while (s2[i])
+		*tmp++ = s2[i];
+	*tmp = '\0';
+	if (s1)
+		free(s1);
 	return (str);
 }

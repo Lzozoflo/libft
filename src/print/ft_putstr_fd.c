@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:52:20 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/13 11:18:43 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/25 19:05:44 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,16 @@
  * @param s The string to write.
  * @param fd The file descriptor or output stream to write the string to.
  */
-void	ft_putstr_fd(char *s, int fd)
+ssize_t	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
+	if (!s)
+		return (write(fd, "(null)", 6));
+	return (write(fd, s, ft_strlen(s)));
+}
 
-	i = 0;
-	while (s[i])
-		ft_putchar_fd(s[i++], fd);
+ssize_t	ft_putstr(char *s)
+{
+	if (!s)
+		return (write(1, "(null)", 6));
+	return (write(1, s, ft_strlen(s)));
 }
