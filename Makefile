@@ -1,4 +1,4 @@
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re bonus f fclear clear
 
 NAME 			=		libft.a
 CC				=		cc
@@ -98,8 +98,8 @@ SRC_STRING		=		ft_split.c\
 
 
 SRC_UTILITY		=		ft_atoi.c\
-						ft_itoa.c\
-						ft_size_base.c
+						ft_base.c\
+						ft_itoa.c
 
 
 #############################################################################################
@@ -171,4 +171,4 @@ fclear			:	fclean
 f				:	fclean
 
 debug			:
-	@echo "SRCS: $(D_OBJS)"
+	@echo "Debug: $(NAME)"

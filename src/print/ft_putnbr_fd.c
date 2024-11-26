@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 19:07:51 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/25 19:10:37 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/26 07:20:49 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,37 @@ ssize_t	ft_putnbr(int n)
 		count += ft_putnbr(n / 10);
 	n = (n % 10);
 	count += ft_putchar(n + '0');
+	return (count);
+}
+
+int	ft_putnbr_base_unsign(unsigned long nbr, int base, const char format)
+{
+	int	count;
+
+	count = 0;
+	if (nbr >= (unsigned long)base)
+		count += ft_putnbr_base_unsign(nbr / base, base, format);
+	count += ft_putchar((ft_convert_base(nbr, base, format)));
+	return (count);
+}
+
+int	ft_putnbr_base(int nbr, int base, const char format)
+{
+	int	count;
+
+	count = 0;
+	if (nbr == INT_MIN)
+	{
+		count = ft_putstr("-2147483648");
+		return (count);
+	}
+	if (nbr < 0)
+	{
+		nbr = -nbr;
+		count += ft_putchar('-');
+	}
+	if (nbr >= base)
+		count += ft_putnbr_base(nbr / base, base, format);
+	count += ft_putchar((ft_convert_base((unsigned long)nbr, base, format)));
 	return (count);
 }

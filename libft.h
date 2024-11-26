@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:34:21 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/25 19:15:38 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/11/26 07:19:39 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <limits.h>
+
 
 typedef struct s_list
 {
@@ -45,13 +47,13 @@ t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 
 // mem Directorie
+void	ft_bzero(void *p, size_t c);
+void	*ft_calloc(size_t nb, size_t es);
 void	*ft_memchr(const void *p, int v, size_t n);
 int		ft_memcmp(const void *p1, const void *p2, size_t size);
 void	*ft_memcpy(void *dest, const void *src, size_t size);
 void	*ft_memmove(void *dest, const void *src, size_t size);
 void	*ft_memset(void *p, int v, size_t c);
-void	ft_bzero(void *p, size_t c);
-void	*ft_calloc(size_t nb, size_t es);
 
 // print Directorie
 ssize_t	ft_putchar_fd(char c, int fd);
@@ -81,8 +83,8 @@ char	*ft_substr(char const *s, unsigned int i, size_t len);
 
 // utility Directorie
 int		ft_atoi(const char *str);
-char	*ft_itoa(int n);
 int		ft_size_base(int nbr, int base);
 char	ft_convert_base(unsigned long nbr, int base, const char format);
+char	*ft_itoa(int n);
 
 #endif
