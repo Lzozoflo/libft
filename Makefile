@@ -1,4 +1,4 @@
-.PHONY: all clean fclean re bonus f fclear clear
+.PHONY: all clean fclean re f fclear c clear
 
 NAME 			=		libft.a
 CC				=		cc
@@ -138,7 +138,7 @@ INCS			=		$(addprefix $(D_INC), $(INC))
 all				:	$(NAME) $(D_OBJ)
 
 
-$(NAME)			:	$(OBJS) 
+$(NAME)			:	$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 
 
@@ -158,7 +158,7 @@ clean 			:
 			$(RM) $(D_OBJ)
 
 
-fclean 			: 	clean
+fclean 			:	clean
 			$(RM) $(NAME)
 
 
