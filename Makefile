@@ -46,60 +46,61 @@ D_UTILITY		=		utility/
 INC				=		libft.h
 
 
-SRC_IS			=		ft_isalnum.c\
-						ft_isalpha.c\
-						ft_isascii.c\
-						ft_isdigit.c\
-						ft_isprint.c\
-						ft_tolower.c\
-						ft_toupper.c
+SRC_IS			=		ft_isalnum.c		\
+						ft_isalpha.c		\
+						ft_isascii.c		\
+						ft_isdigit.c		\
+						ft_isprint.c
 
 
-SRC_LST			=		ft_lstadd_back.c\
-						ft_lstadd_front.c\
-						ft_lstclear.c\
-						ft_lstdelone.c\
-						ft_lstiter.c\
-						ft_lstlast.c\
-						ft_lstmap.c\
-						ft_lstnew.c\
+SRC_LST			=		ft_lstadd_back.c	\
+						ft_lstadd_front.c	\
+						ft_lstclear.c		\
+						ft_lstdelone.c		\
+						ft_lstiter.c		\
+						ft_lstlast.c		\
+						ft_lstmap.c			\
+						ft_lstnew.c			\
 						ft_lstsize.c
 
 
-SRC_MEM			=		ft_memchr.c\
-						ft_memcmp.c\
-						ft_memcpy.c\
-						ft_memmove.c\
-						ft_memset.c\
-						ft_bzero.c\
+SRC_MEM			=		ft_memchr.c			\
+						ft_memcmp.c			\
+						ft_memcpy.c			\
+						ft_memmove.c		\
+						ft_memset.c			\
+						ft_bzero.c			\
 						ft_calloc.c
 
 
-SRC_PRINT		=		ft_putchar_fd.c\
-						ft_putendl_fd.c\
-						ft_putnbr_fd.c\
+SRC_PRINT		=		ft_printf.c			\
+						ft_putchar_fd.c		\
+						ft_putendl_fd.c		\
+						ft_putnbr_fd.c		\
 						ft_putstr_fd.c
 
 
-SRC_STRING		=		ft_split.c\
-						ft_strchr.c\
-						ft_strdup.c\
-						ft_striteri.c\
-						ft_strjoin.c\
-						ft_strlcat.c\
-						ft_strlcpy.c\
-						ft_strlen.c\
-						ft_strmapi.c\
-						ft_strncmp.c\
-						ft_strnstr.c\
-						ft_strrchr.c\
-						ft_strtrim.c\
+SRC_STRING		=		ft_split.c			\
+						ft_strchr.c			\
+						ft_strdup.c			\
+						ft_striteri.c		\
+						ft_strjoin.c		\
+						ft_strlcat.c		\
+						ft_strlcpy.c		\
+						ft_strlen.c			\
+						ft_strmapi.c		\
+						ft_strncmp.c		\
+						ft_strnstr.c		\
+						ft_strrchr.c		\
+						ft_strtrim.c		\
 						ft_substr.c
 
 
-SRC_UTILITY		=		ft_atoi.c\
-						ft_base.c\
-						ft_itoa.c
+SRC_UTILITY		=		ft_atoi.c			\
+						ft_base.c			\
+						ft_itoa.c			\
+						ft_tolower.c		\
+						ft_toupper.c
 
 
 #############################################################################################
@@ -110,12 +111,12 @@ SRC_UTILITY		=		ft_atoi.c\
 
 
 # All src in his Src Directories
-SRCS			=		$(addprefix $(D_SRC), $(SRC)) \
-						$(addprefix $(D_SRC)$(D_IS), $(SRC_IS)) \
-						$(addprefix $(D_SRC)$(D_LST), $(SRC_LST)) \
-						$(addprefix $(D_SRC)$(D_MEM), $(SRC_MEM)) \
-						$(addprefix $(D_SRC)$(D_STRING), $(SRC_STRING)) \
-						$(addprefix $(D_SRC)$(D_PRINT), $(SRC_PRINT)) \
+SRCS			=		$(addprefix $(D_SRC), $(SRC))						\
+						$(addprefix $(D_SRC)$(D_IS), $(SRC_IS))				\
+						$(addprefix $(D_SRC)$(D_LST), $(SRC_LST))			\
+						$(addprefix $(D_SRC)$(D_MEM), $(SRC_MEM))			\
+						$(addprefix $(D_SRC)$(D_STRING), $(SRC_STRING))		\
+						$(addprefix $(D_SRC)$(D_PRINT), $(SRC_PRINT))		\
 						$(addprefix $(D_SRC)$(D_UTILITY), $(SRC_UTILITY))
 
 
@@ -135,7 +136,6 @@ INCS			=		$(addprefix $(D_INC), $(INC))
 
 
 all				:	$(NAME) $(D_OBJ)
-makea			:	all
 
 
 $(NAME)			:	$(OBJS) 
@@ -166,9 +166,10 @@ re 				:	 fclean all
 
 
 # Allias
-clear			: clean
-fclear			:	fclean
+c				:	clear
+clear			:	clean
 f				:	fclean
+fclear			:	fclean
 
 debug			:
-	@echo "Debug: $(NAME)"
+	@echo "Debug: $(all)"

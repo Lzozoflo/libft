@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:34:21 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/26 07:19:39 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/03 09:15:42 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
 
 // lst Directorie
 void	ft_lstadd_back(t_list **lst, t_list *new);
@@ -56,12 +54,15 @@ void	*ft_memmove(void *dest, const void *src, size_t size);
 void	*ft_memset(void *p, int v, size_t c);
 
 // print Directorie
+int		ft_printf(const char *format, ...);
 ssize_t	ft_putchar_fd(char c, int fd);
 ssize_t	ft_putchar(char c);
 ssize_t	ft_putendl_fd(char *s, int fd);
 ssize_t	ft_putendl(char *s);
 ssize_t	ft_putnbr_fd(int n, int fd);
 ssize_t	ft_putnbr(int n);
+int		ft_putnbr_base(int nbr, int base, const char format);
+int		ft_putnbr_base_unsign(unsigned long nbr, int base, const char f);
 ssize_t	ft_putstr_fd(char *s, int fd);
 ssize_t	ft_putstr(char *s);
 
@@ -70,7 +71,7 @@ char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strdup(const char *src);
 void	ft_striteri(char *str, void (*f)(unsigned int, char *));
-char	*ft_strjoin(char *s1, char const *s2);
+char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *str);
@@ -86,5 +87,8 @@ int		ft_atoi(const char *str);
 int		ft_size_base(int nbr, int base);
 char	ft_convert_base(unsigned long nbr, int base, const char format);
 char	*ft_itoa(int n);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
+
 
 #endif

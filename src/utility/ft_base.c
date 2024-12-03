@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_size_base.c                                     :+:      :+:    :+:   */
+/*   ft_base.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 18:55:11 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/25 19:09:50 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/03 09:08:30 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	ft_convert_base(unsigned long nbr, int base, const char format)
 {
 	char	*s;
 
-	if (base > 36 || base <= 0)
+	if (base > 36 || base <= 1)
 		return (0);
 	if (format == 'X')
 		s = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";

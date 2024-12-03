@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 19:07:51 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/26 07:20:49 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/03 09:10:11 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,34 +62,50 @@ ssize_t	ft_putnbr(int n)
 	return (count);
 }
 
-int	ft_putnbr_base_unsign(unsigned long nbr, int base, const char format)
-{
-	int	count;
-
-	count = 0;
-	if (nbr >= (unsigned long)base)
-		count += ft_putnbr_base_unsign(nbr / base, base, format);
-	count += ft_putchar((ft_convert_base(nbr, base, format)));
-	return (count);
-}
-
 int	ft_putnbr_base(int nbr, int base, const char format)
 {
 	int	count;
+	int	isneg;
 
 	count = 0;
 	if (nbr == INT_MIN)
-	{
-		count = ft_putstr("-2147483648");
-		return (count);
-	}
+		return (ft_putstr("-2147483648"));
 	if (nbr < 0)
 	{
+		if (ft_putchar('-') < 0)
+			return (-1);
+		count++;
 		nbr = -nbr;
-		count += ft_putchar('-');
 	}
 	if (nbr >= base)
-		count += ft_putnbr_base(nbr / base, base, format);
-	count += ft_putchar((ft_convert_base((unsigned long)nbr, base, format)));
+	{
+		isneg = ft_putnbr_base(nbr / base, base, format);
+		if (isneg < 0)
+			return (-1);
+		count += isneg;
+	}
+	isneg = ft_putchar((ft_convert_base((unsigned long)nbr, base, format)));
+	if (isneg < 0)
+		return (-1);
+	return (count + isneg);
+}
+
+int	ft_putnbr_base_unsign(unsigned long nbr, int base, const char f)
+{
+	int	count;
+	int	isneg;
+
+	count = 0;
+	if (nbr >= (unsigned long)base)
+	{
+		isneg = ft_putnbr_base_unsign(nbr / base, base, f);
+		if (isneg < 0)
+			return (-1);
+		count += isneg;
+	}
+	isneg = ft_putchar((ft_convert_base(nbr, base, f)));
+	if (isneg < 0)
+		return (-1);
+	count += isneg;
 	return (count);
 }
