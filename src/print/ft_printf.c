@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:00:01 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/03 09:15:00 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/04 13:27:49 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ static int	ft_format_or_char(const char **format, va_list args)
 
 /**
  * @brief Handles displaying data based on a format character.
- * 
+ *
  * This function displays formatted data according to the `format` character.
  * It retrieves arguments from `args` using `va_arg` and calls the appropriate
  * function to perform the display.
- * 
+ *
  * @param format A character specifying the format type:
  *               - '%' : Displays a percentage symbol '%'.
  *               - 'c' : Displays a character.
@@ -68,12 +68,12 @@ static int	ft_format_or_char(const char **format, va_list args)
  *               - 'x' : Displays an unsigned integer (hex, lowercase).
  *               - 'X' : Displays an unsigned integer (hex, uppercase).
  *               - 'p' : Prefixed with "0x", displays a pointer in hex, .
- * 
+ *
  * @param args A `va_list` containing the values to display as per the format.
- * 
+ *
  * @return int The number of characters displayed. Returns `-1` if the format
  *             is unrecognized.
- * 
+ *
  * @note Functions like `ft_putchar`, `ft_putstr`, etc., must be defined to
  *       handle the display and formatting for numeric bases.
  */
@@ -94,6 +94,22 @@ static int	ft_what_format(const char format, va_list args)
 	else if (format == 'p')
 		return (ft_ptr_format(format, args));
 	return (-1);
+}
+
+static int	ft_format_or_char(const char **format, va_list args)
+{
+	int	isneg;
+
+	if (**format == '%')
+	{
+		(*format)++;
+		isneg = ft_what_format(**format, args);
+	}
+	else
+		isneg = ft_putchar(**format);
+	if (isneg < 0)
+		return (-1);
+	return (isneg);
 }
 
 int	ft_printf(const char *format, ...)
