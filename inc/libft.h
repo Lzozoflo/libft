@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:34:21 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/03 09:15:42 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/10 18:13:56 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <string.h>
 # include <unistd.h>
 # include <limits.h>
-
 
 typedef struct s_list
 {
@@ -68,6 +67,7 @@ ssize_t	ft_putstr(char *s);
 
 // string Directorie
 char	**ft_split(char const *s, char c);
+char	**ft_free_the_malloc(char **tab, unsigned int j);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strdup(const char *src);
 void	ft_striteri(char *str, void (*f)(unsigned int, char *));
@@ -81,6 +81,7 @@ char	*ft_strnstr(const char *str, const char *cmp, size_t len);
 char	*ft_strrchr(const char *str, int search_char);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int i, size_t len);
+char	*get_next_line(int fd);
 
 // utility Directorie
 int		ft_atoi(const char *str);
@@ -89,6 +90,5 @@ char	ft_convert_base(unsigned long nbr, int base, const char format);
 char	*ft_itoa(int n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-
 
 #endif

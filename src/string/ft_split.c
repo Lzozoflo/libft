@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:34:46 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/20 15:20:11 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/10 18:14:49 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 /**
  * @brief Counts the number of words in a string separated by a character.
- * 
+ *
  * The `ft_num_word` function iterates over the string `s` and counts the number
  * of words that are separated by the character `c`. A word is defined as
  * a sequence of characters that does not contain `c`.
- * 
+ *
  * @param s The string to analyze.
  * @param c The character that separates the words in the string.
  * @return int The number of words found in the string.
@@ -46,11 +46,11 @@ static int	ft_num_word(const char *s, char c)
 
 /**
  * @brief Calculates the length of a word in a string up to a given character.
- * 
+ *
  * The `ft_len_word` function iterates through the string `str` until it
  * encounters the character `c` or the end of the string, and returns the
  * number of characters before this separator character.
- * 
+ *
  * @param str The string to analyze.
  * @param c The separator character that marks the end of the word.
  * @return int The length of the word before the character `c`.
@@ -70,37 +70,43 @@ static int	ft_len_word(const char *str, char c)
 
 /**
  * @brief Frees the memory allocated for an array of strings.
- * 
+ *
  * The `ft_free_the_malloc` function frees each string in the array `str`
  * up to the index `j`, and then frees the array itself. It is used to free
  * memory in case of an error during memory allocation in `ft_split`.
- * 
+ *
  * @param str The array of strings to free.
  * @param j The number of strings to free before returning `NULL`.
  * @return char** Always `NULL` after freeing the memory.
  */
-static char	**ft_free_the_malloc(char **str, int j)
+char	**ft_free_the_malloc(char **tab, unsigned int j)
 {
-	int	i;
+	unsigned int	i;
 
+	if (!j)
+	{
+		j = 0;
+		while (tab[j])
+			j++;
+	}
 	i = 0;
 	while (i < j)
 	{
-		free(str[i++]);
+		free(tab[i++]);
 	}
-	free(str);
+	free(tab);
 	return (NULL);
 }
 
 /**
  * @brief Split a string into an array of substrings, separated by a character.
- * 
+ *
  * The `ft_split` function divides the string `s` into multiple substrings,
- * using the character `c` as a separator. It returns an array of strings, 
+ * using the character `c` as a separator. It returns an array of strings,
  * where each element is a word extracted from the original string. If a memory
- * allocation error occurs, it frees the allocated resources before returning 
+ * allocation error occurs, it frees the allocated resources before returning
  * `NULL`.
- * 
+ *
  * @param s The string to split.
  * @param c The character that separates the words in the string.
  * @return char** An array of strings, or `NULL` in case of an error.

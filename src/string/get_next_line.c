@@ -6,11 +6,15 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 09:49:31 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/04 16:04:10 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/10 16:04:02 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
+
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 50
+#endif
 
 static char	*ft_mmv(char *buff, char *line)
 {
@@ -26,7 +30,7 @@ static char	*ft_mmv(char *buff, char *line)
 	return (line);
 }
 
-static char	*ft_strjoin(char *s1, const char *s2)
+static char	*ft_strjoin_gnl(char *s1, const char *s2)
 {
 	char	*str;
 	int		i;
@@ -67,7 +71,7 @@ static char	*ft_check_strjoin(char *s1, const char *s2)
 			return (NULL);
 		s1[0] = '\0';
 	}
-	str = ft_strjoin(s1, s2);
+	str = ft_strjoin_gnl(s1, s2);
 	if (!str)
 		return (NULL);
 	return (str);

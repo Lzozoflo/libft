@@ -2,7 +2,7 @@
 
 NAME 			=		libft.a
 CC				=		cc
-CFLAGS			=		-Wall -Wextra -Werror
+CFLAGS			=		-Wall -Wextra -Werror -MMD -MP
 RM				=		rm -fr
 AR				=		ar -rcs
 
@@ -43,9 +43,7 @@ D_UTILITY		=		utility/
 #############################################################################################
 
 
-INC				=		libft.h				\
-						ft_printf.h			\
-						get_next_line.h
+INC				=		libft.h
 
 
 SRC_IS			=		ft_isalnum.c		\
@@ -124,9 +122,9 @@ SRCS			=		$(addprefix $(D_SRC), $(SRC))						\
 
 
 # Changing all source directories to object directories
-OBJS = $(subst $(D_SRC), $(D_OBJ), $(SRCS:.c=.o))
-D_OBJS = $(subst $(D_SRC), $(D_OBJ), $(SRCS))
-
+OBJS			=		$(subst $(D_SRC), $(D_OBJ), $(SRCS:.c=.o))
+D_OBJS			=		$(subst $(D_SRC), $(D_OBJ), $(SRCS))
+DEPS			=		$(SRCS:%.c=%.d)
 
 INCS			=		$(addprefix $(D_INC), $(INC))
 
@@ -185,3 +183,4 @@ fclear			:	fclean
 #to see what variables did
 debug			:
 	@echo "Debug: $(all)"
+ -include $(DEPS)

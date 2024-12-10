@@ -6,11 +6,11 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:00:01 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/10 07:36:35 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/10 16:07:18 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static int	ft_ptr_format(const char format, va_list args)
 {
@@ -35,7 +35,6 @@ static int	ft_ptr_format(const char format, va_list args)
 		return (-1);
 	return (count + isneg);
 }
-
 
 /**
  * @brief Handles displaying data based on a format character.
