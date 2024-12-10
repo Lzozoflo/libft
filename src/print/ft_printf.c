@@ -6,7 +6,7 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:00:01 by fcretin           #+#    #+#             */
-/*   Updated: 2024/12/04 13:27:49 by fcretin          ###   ########.fr       */
+/*   Updated: 2024/12/10 07:36:35 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,6 @@ static int	ft_ptr_format(const char format, va_list args)
 	return (count + isneg);
 }
 
-static int	ft_format_or_char(const char **format, va_list args)
-{
-	int	isneg;
-
-	if (**format == '%')
-	{
-		(*format)++;
-		isneg = ft_what_format(**format, args);
-	}
-	else
-		isneg = ft_putchar(**format);
-	if (isneg < 0)
-		return (-1);
-	return (isneg);
-}
 
 /**
  * @brief Handles displaying data based on a format character.

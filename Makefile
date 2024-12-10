@@ -25,7 +25,7 @@ RESET			=		\033[0m
 # Directories
 D_SRC			=		src/
 D_OBJ			=		object/
-D_INC			=		./
+D_INC			=		./inc/
 
 # Source Directories
 D_IS			=		is/
@@ -43,7 +43,9 @@ D_UTILITY		=		utility/
 #############################################################################################
 
 
-INC				=		libft.h
+INC				=		libft.h				\
+						ft_printf.h			\
+						get_next_line.h
 
 
 SRC_IS			=		ft_isalnum.c		\
@@ -93,7 +95,8 @@ SRC_STRING		=		ft_split.c			\
 						ft_strnstr.c		\
 						ft_strrchr.c		\
 						ft_strtrim.c		\
-						ft_substr.c
+						ft_substr.c			\
+						get_next_line.c
 
 
 SRC_UTILITY		=		ft_atoi.c			\
@@ -142,9 +145,9 @@ $(NAME)			:	$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 
 
-$(D_OBJ)%.o	: 	 $(D_SRC)%.c $(INCS)
+$(D_OBJ)%.o	: 	 $(D_SRC)%.c $(INCS) Makefile
 			@mkdir -p $(dir $@)
-			$(CC) $(CFLAGS) -c $< -o $@ -I ./
+			$(CC) $(CFLAGS) -c $< -o $@ -I $(D_INC)
 
 
 #############################################################################################
@@ -165,11 +168,20 @@ fclean 			:	clean
 re 				:	 fclean all
 
 
-# Allias
+#############################################################################################
+#																							#
+#										Allias									#
+#																							#
+#############################################################################################
+
+
 c				:	clear
 clear			:	clean
+
 f				:	fclean
 fclear			:	fclean
 
+
+#to see what variables did
 debug			:
 	@echo "Debug: $(all)"

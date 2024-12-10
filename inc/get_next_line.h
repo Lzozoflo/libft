@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 15:30:10 by fcretin           #+#    #+#             */
-/*   Updated: 2024/11/29 10:31:32 by fcretin          ###   ########.fr       */
+/*   Created: 2024/11/28 09:38:23 by fcretin           #+#    #+#             */
+/*   Updated: 2024/12/04 13:17:44 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-# include <stdarg.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 20
+# endif
+
 # include <unistd.h>
-# include <limits.h>
+# include <stdlib.h>
 
+char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);
-int		ft_putchar(char c);
-int		ft_putstr(char *s);
-char	ft_convert_base(unsigned long nbr, int base, const char format);
-int		ft_format_or_char(const char **format, va_list args);
-int		ft_what_format(const char format, va_list args);
-int		ft_printf(const char *format, ...);
+void	ft_bzero(void *p, size_t c);
+char	*ft_strchr(const char *str, int c);
+void	*ft_memmove(void *dest, const void *src, size_t size);
 
 #endif
